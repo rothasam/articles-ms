@@ -33,30 +33,42 @@ class DatabaseSeeder extends Seeder
         // na t'ne kuy write te, so use the code below
     */
 
-        $dataCategories = [
-            ['title' => 'Mountain'],
-            ['title' => 'Sea'],
-            ['title' => 'Culture'],
-        ];
+        // $dataCategories = [
+        //     ['title' => 'Mountain'],
+        //     ['title' => 'Sea'],
+        //     ['title' => 'Culture'],
+        // ];
 
-        foreach ($dataCategories as $data) {
-            $category = new Category();
-            $category->title = $data['title'];
-            $category->save();
-        }
+        // foreach ($dataCategories as $data) {
+        //     $category = new Category();
+        //     $category->title = $data['title'];
+        //     $category->save();
+        // }
 
 
-        $dataTags = [
-            ['name' => 'temple'],
-            ['name' => 'angkor'],
-            ['name' => 'kompot'],
-        ];
+        // $dataTags = [
+        //     ['name' => 'temple'],
+        //     ['name' => 'angkor'],
+        //     ['name' => 'kompot'],
+        // ];
 
-        foreach($dataTags as $data){
-            $tag = new Tag();
-            $tag->name = $data['name'];
-            $tag->save();  
-        }
+        // foreach($dataTags as $data){
+        //     $tag = new Tag();
+        //     $tag->name = $data['name'];
+        //     $tag->save();  
+        // }
+
+        // note : if we have default(like the code above),there should be per seed(Class) per table. Below is how we call Class.
+        // command line to create seed :  php artisan make:seeder ClassSeeder , example :  php artisan make:seeder CategorySeeder
+
+
+
+        $this->call([
+            CategorySeeder::class,
+            TagSeeder::class,
+        ]);
+
+
 
     }
 }
