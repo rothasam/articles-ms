@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Tag;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,11 +15,48 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // command line to create model : php artisan make:model ModelName (ModelName start with big letter and singular noun)
+       
+    /*
+        $category = new Category();
+        $category->title = 'Mountain';
+        $category->save();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $category = new Category();
+        $category->title = 'Sea';
+        $category->save();
+
+        $category = new Category();
+        $category->title = 'Culture';
+        $category->save();
+
+        // na t'ne kuy write te, so use the code below
+    */
+
+        $dataCategories = [
+            ['title' => 'Mountain'],
+            ['title' => 'Sea'],
+            ['title' => 'Culture'],
+        ];
+
+        foreach ($dataCategories as $data) {
+            $category = new Category();
+            $category->title = $data['title'];
+            $category->save();
+        }
+
+
+        $dataTags = [
+            ['name' => 'temple'],
+            ['name' => 'angkor'],
+            ['name' => 'kompot'],
+        ];
+
+        foreach($dataTags as $data){
+            $tag = new Tag();
+            $tag->name = $data['name'];
+            $tag->save();  
+        }
+
     }
 }
