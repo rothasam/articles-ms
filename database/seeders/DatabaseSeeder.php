@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use App\Models\Category;
-use App\Models\Tag;
+// use App\Models\User;
+// use App\Models\Category;
+// use App\Models\Tag;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -66,8 +67,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             TagSeeder::class,
+            UserSeeder::class,
+            ArticleSeeder::class
         ]);
-
 
 
     }
