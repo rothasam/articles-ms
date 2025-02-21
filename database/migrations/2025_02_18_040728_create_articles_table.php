@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->unsignedBigInteger('id',true)->primary();
+            $table->unsignedBigInteger('id',true);
             $table->string('title');
             $table->string('thumbnail')->default('no_thumbnail.jpg');
             $table->string('short_desc');
