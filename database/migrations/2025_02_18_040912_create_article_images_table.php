@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id',true)->primary();
             $table->unsignedBigInteger('article_id');
             $table->foreign('article_id')->references('id')->on('articles')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('name')->unique();
+            $table->string('name');
         });
     }
 

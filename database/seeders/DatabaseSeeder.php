@@ -7,6 +7,8 @@ namespace Database\Seeders;
 // use App\Models\Tag;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\ArticleImage;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -68,7 +70,9 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             TagSeeder::class,
             UserSeeder::class,
-            ArticleSeeder::class
+            ArticleSeeder::class,
+            ArticleTagSeeder::class,
+            ArticleImageSeeder::class
         ]);
 
 
